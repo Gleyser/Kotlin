@@ -14,7 +14,21 @@ class MainActivity : AppCompatActivity() {
 
         val btcalcular = buttonCalcular
         val resultado = textViewResultado
-        resultado.setText("Aluno aprovado")
+
+        btcalcular.setOnClickListener {
+            val nota1 = Integer.parseInt(editTextNota1.toString())
+            val nota2 = Integer.parseInt(editTextNota2.toString())
+            val media = (nota1 + nota2) / 2
+            val numeroDefaltas = Integer.parseInt(editTextFaltas.toString())
+
+            if (media >= 6 && numeroDefaltas <= 10){
+                textViewResultado.setText("O aluno foi aprovado")
+            } else {
+                textViewResultado.setText("O aluno foi reprovado")
+        }
+
+
+        }
 
 
         }
